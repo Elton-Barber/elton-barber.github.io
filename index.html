@@ -1,1 +1,230 @@
-# qqqqqq
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elton Barber – Ihr perfekter Look beginnt hier</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-card: #1a1a1a;
+      --accent: #c9a24d;
+      --text-main: #f2f2f2;
+      --text-muted: #b5b5b5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 80px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom, #000000, #111111);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .slogan {
+      margin-top: 30px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    /* Booking */
+    .booking {
+      background-color: var(--bg-card);
+      border-radius: 10px;
+      padding: 30px;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    footer {
+      background-color: #000;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Ihr perfekter Look beginnt hier</h1>
+    <p>Buchen Sie Ihren nächsten Termin bei unseren Top-Stylisten bequem online</p>
+    <div class="slogan">
+      Elton Barber. Echter Style, echte Leidenschaft<br/>
+      Style auf der Straße. Qualität im Laden.
+    </div>
+  </header>
+
+  <!-- BOOKING -->
+  <section>
+    <h2>Termin buchen</h2>
+    <div class="booking">
+      <!-- Cal inline embed code begins -->
+      <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-elton.baber"></div>
+      <script type="text/javascript">
+        (function (C, A, L) {
+          let p = function (a, ar) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
+
+        Cal("init", "elton.baber", { origin: "https://app.cal.com" });
+
+        Cal.ns["elton.baber"]("inline", {
+          elementOrSelector: "#my-cal-inline-elton.baber",
+          config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+          calLink: "elton.barber/elton.baber",
+        });
+
+        Cal.ns["elton.baber"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+      </script>
+      <!-- Cal inline embed code ends -->
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2>Unsere Dienstleistungen</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Herrenhaarschnitt</h3>
+        <p>Waschen, Schneiden, Styling</p>
+      </div>
+      <div class="service-card">
+        <h3>Bartpflege</h3>
+        <p>Konturen und Trimmen</p>
+      </div>
+      <div class="service-card">
+        <h3>Damenhaarschnitt</h3>
+        <p>Waschen, Schneiden, Föhnen</p>
+      </div>
+      <div class="service-card">
+        <h3>Haarfarbe / Tönung</h3>
+        <p>Komplettfarbe inkl. Pflege</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact">
+    <h2>Kontakt</h2>
+    <p><strong>Elton Barber</strong></p>
+    <p>Keiserstrasse 6, 4310 Rheinfelden</p>
+    <p>E-Mail: eltoni.barber@gmail.com</p>
+    <p>Telefon: +41 79 860 21 17</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Elton Barber</span> steht für authentischen Style, Präzision und Leidenschaft für echtes Handwerk.
+  </footer>
+
+</body>
+</html>
