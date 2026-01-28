@@ -1,35 +1,14 @@
 <!DOCTYPE html>
 <html lang="de">
-<header>
-  <div class="hero-container">
-    <h1>Ihr perfekter Look beginnt hier</h1>
-    <p>Buchen Sie Ihren nächsten Termin bei unseren Top-Stylisten bequem online</p>
-
-    <div class="slogan">
-      Elton Barber. Echter Style, echte Leidenschaft<br/>
-      Style auf der Straße. Qualität im Laden.
-    </div>
-  </div>
-</header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elton Barber – Ihr perfekter Look beginnt hier</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
-  .hero-container {
-  max-width: 800px;     /* gleiche visuelle Breite wie Footer */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-header h1 {
-  line-height: 1.2;
-}
-
-header p {
-  line-height: 1.6;
-}
-
     :root {
       --bg-main: #f5f5f5;
       --bg-card: #ffffff;
@@ -56,99 +35,138 @@ header p {
       line-height: 1.6;
     }
 
-   /* NAVIGATION */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--border-light);
-}
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+    }
 
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-}
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+    }
 
-/* Links Desktop */
-.nav-links {
-  display: flex;
-  align-items: center;
-}
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
 
-.nav-links a {
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--text-main);
-}
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-main);
+    }
 
-.nav-links a.cta {
-  color: #ffffff;
-  background-color: var(--accent);
-  padding: 8px 16px;
-  border-radius: 4px;
-}
+    .nav-links a.cta {
+      color: #ffffff;
+      background-color: var(--accent);
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
 
-/* Burger Button */
-.burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-.burger span {
-  height: 3px;
-  width: 25px;
-  background: var(--text-main);
-  margin: 4px 0;
-  border-radius: 2px;
-}
+    .burger span {
+      height: 3px;
+      width: 25px;
+      background: var(--text-main);
+      margin: 4px 0;
+      border-radius: 2px;
+    }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .burger {
-    display: flex;
-  }
+    @media (max-width: 768px) {
+      .burger {
+        display: flex;
+      }
 
-  .nav-links {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    border-bottom: 1px solid var(--border-light);
-  }
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        border-bottom: 1px solid var(--border-light);
+      }
 
-  .nav-links a {
-    margin: 15px 0;
-    font-size: 1.1rem;
-  }
+      .nav-links a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+      }
 
-  .nav-links.active {
-    display: flex;
-  }
-}
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* HERO */
+    header {
+      background-color: #ffffff;
+      padding: 90px 20px 80px;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .slogan {
+      margin-top: 30px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
     /* BOOKING */
     .booking {
       background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
       border-radius: 8px;
       padding: 30px;
-      border: 1px solid var(--border-light);
     }
 
     /* SERVICES */
@@ -166,14 +184,12 @@ nav {
     }
 
     .service-card h3 {
-      margin-bottom: 10px;
       color: var(--accent);
-      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
     .service-card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
     }
 
     /* CONTACT */
@@ -204,29 +220,23 @@ nav {
       header h1 {
         font-size: 2.1rem;
       }
-
-      .nav-links a {
-        margin-left: 15px;
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
- <nav>
+<!-- NAV -->
+<nav>
   <div class="nav-container">
     <div class="logo">ELTON BARBER</div>
 
-    <!-- Burger Button -->
     <div class="burger" id="burger">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- Navigation Links -->
     <div class="nav-links" id="nav-links">
       <a href="#services">Dienstleistungen</a>
       <a href="#contact">Kontakt</a>
@@ -235,75 +245,102 @@ nav {
   </div>
 </nav>
 
-  <!-- HERO -->
-  <header>
+<!-- HERO -->
+<header>
+  <div class="hero-container">
     <h1>Ihr perfekter Look beginnt hier</h1>
     <p>Buchen Sie Ihren nächsten Termin bei unseren Top-Stylisten bequem online</p>
     <div class="slogan">
-      Elton Barber. Echter Style, echte Leidenschaft<br/>
+      Elton Barber. Echter Style, echte Leidenschaft<br>
       Style auf der Straße. Qualität im Laden.
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- BOOKING -->
-  <section id="booking">
-    <h2>Termin buchen</h2>
-    <div class="booking">
-       <!-- Cal inline embed code begins -->
-<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-eb"></div>
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "eb", {origin:"https://app.cal.com"});
+<!-- BOOKING -->
+<section id="booking">
+  <h2>Termin buchen</h2>
+  <div class="booking">
 
-  Cal.ns.eb("inline", {
-    elementOrSelector:"#my-cal-inline-eb",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-    calLink: "elton.barber/eb",
-  });
+    <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-eb"></div>
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
 
-  Cal.ns.eb("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
-  <!-- Cal inline embed code ends -->
-      </script>
+      Cal("init", "eb", { origin: "https://app.cal.com" });
+
+      Cal.ns.eb("inline", {
+        elementOrSelector: "#my-cal-inline-eb",
+        config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+        calLink: "elton.barber/eb",
+      });
+
+      Cal.ns.eb("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+    </script>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Unsere Dienstleistungen</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>Herrenhaarschnitt</h3>
+      <p>Waschen, Schneiden, Styling</p>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <h2>Unsere Dienstleistungen</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Herrenhaarschnitt</h3>
-        <p>Waschen, Schneiden, Styling</p>
-      </div>
-      <div class="service-card">
-        <h3>Bartpflege</h3>
-        <p>Konturen und Trimmen</p>
-      </div>
-      <div class="service-card">
-        <h3>Damenhaarschnitt</h3>
-        <p>Waschen, Schneiden, Föhnen</p>
-      </div>
-      <div class="service-card">
-        <h3>Haarfarbe / Tönung</h3>
-        <p>Komplettfarbe inkl. Pflege</p>
-      </div>
+    <div class="service-card">
+      <h3>Bartpflege</h3>
+      <p>Konturen und Trimmen</p>
     </div>
-  </section>
+    <div class="service-card">
+      <h3>Damenhaarschnitt</h3>
+      <p>Waschen, Schneiden, Föhnen</p>
+    </div>
+    <div class="service-card">
+      <h3>Haarfarbe / Tönung</h3>
+      <p>Komplettfarbe inkl. Pflege</p>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Kontakt</h2>
-    <p><strong>Elton Barber</strong></p>
-    <p>Keiserstrasse 6, 4310 Rheinfelden</p>
-    <p>E-Mail: eltoni.barber@gmail.com</p>
-    <p>Telefon: +41 79 860 21 17</p>
-  </section>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Kontakt</h2>
+  <p><strong>Elton Barber</strong></p>
+  <p>Keiserstrasse 6, 4310 Rheinfelden</p>
+  <p>E-Mail: eltoni.barber@gmail.com</p>
+  <p>Telefon: +41 79 860 21 17</p>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <span>Elton Barber</span> steht für authentischen Style, Präzision und Leidenschaft für echtes Handwerk.
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <span>Elton Barber</span> steht für authentischen Style, Präzision und Leidenschaft für echtes Handwerk.
+</footer>
 
 <script>
   const burger = document.getElementById("burger");
@@ -313,12 +350,12 @@ Cal("init", "eb", {origin:"https://app.cal.com"});
     navLinks.classList.toggle("active");
   });
 
-  // Menü schließt sich nach Klick (mobil)
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("active");
     });
   });
 </script>
+
 </body>
 </html>
