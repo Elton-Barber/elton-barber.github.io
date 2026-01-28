@@ -35,84 +35,92 @@
       line-height: 1.6;
     }
 
-    /* NAVIGATION */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background-color: #ffffff;
-      border-bottom: 1px solid var(--border-light);
-    }
+   /* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
 
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      color: var(--text-main);
-    }
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
 
-    .nav-links a {
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      color: var(--text-main);
-    }
+/* Links Desktop */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
 
-    .nav-links a.cta {
-      color: #ffffff;
-      background-color: var(--accent);
-      padding: 8px 16px;
-      border-radius: 4px;
-    }
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-main);
+}
 
-    /* HERO */
-    header {
-      padding: 90px 20px 80px;
-      text-align: center;
-      background-color: #ffffff;
-    }
+.nav-links a.cta {
+  color: #ffffff;
+  background-color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 4px;
+}
 
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+/* Burger Button */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
 
-    header p {
-      max-width: 800px;
-      margin: 0 auto 20px;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
+.burger span {
+  height: 3px;
+  width: 25px;
+  background: var(--text-main);
+  margin: 4px 0;
+  border-radius: 2px;
+}
 
-    .slogan {
-      margin-top: 30px;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.4px;
-    }
+/* Mobile */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
 
-    section {
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    border-bottom: 1px solid var(--border-light);
+  }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      text-align: center;
-      color: var(--text-main);
-    }
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
 
     /* BOOKING */
     .booking {
@@ -186,16 +194,25 @@
 <body>
 
   <!-- NAV -->
-  <nav>
-    <div class="nav-container">
-      <div class="logo">ELTON BARBER</div>
-      <div class="nav-links">
-        <a href="#services">Dienstleistungen</a>
-        <a href="#contact">Kontakt</a>
-        <a href="#booking" class="cta">Termin buchen</a>
-      </div>
+ <nav>
+  <div class="nav-container">
+    <div class="logo">ELTON BARBER</div>
+
+    <!-- Burger Button -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </nav>
+
+    <!-- Navigation Links -->
+    <div class="nav-links" id="nav-links">
+      <a href="#services">Dienstleistungen</a>
+      <a href="#contact">Kontakt</a>
+      <a href="#booking" class="cta">Termin buchen</a>
+    </div>
+  </div>
+</nav>
 
   <!-- HERO -->
   <header>
@@ -267,5 +284,20 @@ Cal("init", "eb", {origin:"https://app.cal.com"});
     <span>Elton Barber</span> steht für authentischen Style, Präzision und Leidenschaft für echtes Handwerk.
   </footer>
 
+<script>
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Menü schließt sich nach Klick (mobil)
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+</script>
 </body>
 </html>
