@@ -10,11 +10,12 @@
 
   <style>
     :root {
-      --bg-dark: #0f0f0f;
-      --bg-card: #1a1a1a;
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
       --accent: #c9a24d;
-      --text-main: #f2f2f2;
-      --text-muted: #b5b5b5;
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --border-light: #e0e0e0;
     }
 
     * {
@@ -23,17 +24,61 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-dark);
+      background-color: var(--bg-main);
       color: var(--text-main);
       line-height: 1.6;
     }
 
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      color: var(--text-main);
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .nav-links a.cta {
+      color: #ffffff;
+      background-color: var(--accent);
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    /* HERO */
     header {
-      padding: 80px 20px;
+      padding: 90px 20px 80px;
       text-align: center;
-      background: linear-gradient(to bottom, #000000, #111111);
+      background-color: #ffffff;
     }
 
     header h1 {
@@ -52,8 +97,8 @@
     .slogan {
       margin-top: 30px;
       font-weight: 600;
-      letter-spacing: 0.5px;
       color: var(--accent);
+      letter-spacing: 0.4px;
     }
 
     section {
@@ -66,17 +111,18 @@
       font-size: 2rem;
       margin-bottom: 40px;
       text-align: center;
-      color: var(--accent);
+      color: var(--text-main);
     }
 
-    /* Booking */
+    /* BOOKING */
     .booking {
       background-color: var(--bg-card);
-      border-radius: 10px;
+      border-radius: 8px;
       padding: 30px;
+      border: 1px solid var(--border-light);
     }
 
-    /* Services */
+    /* SERVICES */
     .services {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -86,7 +132,8 @@
     .service-card {
       background-color: var(--bg-card);
       padding: 25px;
-      border-radius: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
     }
 
     .service-card h3 {
@@ -100,7 +147,7 @@
       font-size: 0.95rem;
     }
 
-    /* Contact */
+    /* CONTACT */
     .contact {
       text-align: center;
     }
@@ -111,7 +158,8 @@
     }
 
     footer {
-      background-color: #000;
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-light);
       padding: 40px 20px;
       text-align: center;
       font-size: 0.9rem;
@@ -120,16 +168,34 @@
 
     footer span {
       color: var(--accent);
+      font-weight: 600;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       header h1 {
         font-size: 2.1rem;
+      }
+
+      .nav-links a {
+        margin-left: 15px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">ELTON BARBER</div>
+      <div class="nav-links">
+        <a href="#services">Dienstleistungen</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#booking" class="cta">Termin buchen</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- HERO -->
   <header>
@@ -142,28 +208,54 @@
   </header>
 
   <!-- BOOKING -->
-  <section>
+  <section id="booking">
     <h2>Termin buchen</h2>
     <div class="booking">
-      <!-- Cal inline embed code begins -->
-<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-eb"></div>
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "eb", {origin:"https://app.cal.com"});
+      <div style="width:100%;height:600px;overflow:scroll" id="my-cal-inline-elton.baber"></div>
 
-  Cal.ns.eb("inline", {
-    elementOrSelector:"#my-cal-inline-eb",
-    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-    calLink: "elton.barber/eb",
-  });
+      <script type="text/javascript">
+        (function (C, A, L) {
+          let p = function (a, ar) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
 
-  Cal.ns.eb("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
-  <!-- Cal inline embed code ends -->
+        Cal("init", "elton.baber", { origin: "https://app.cal.com" });
+
+        Cal.ns["elton.baber"]("inline", {
+          elementOrSelector: "#my-cal-inline-elton.baber",
+          config: { "layout": "month_view", "useSlotsViewOnSmallScreen": "true" },
+          calLink: "elton.barber/eb",
+        });
+
+        Cal.ns["elton.baber"]("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+      </script>
+    </div>
   </section>
 
   <!-- SERVICES -->
-  <section>
+  <section id="services">
     <h2>Unsere Dienstleistungen</h2>
     <div class="services">
       <div class="service-card">
@@ -186,7 +278,7 @@ Cal("init", "eb", {origin:"https://app.cal.com"});
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section id="contact" class="contact">
     <h2>Kontakt</h2>
     <p><strong>Elton Barber</strong></p>
     <p>Keiserstrasse 6, 4310 Rheinfelden</p>
