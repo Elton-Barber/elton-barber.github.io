@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elton Barber – Ihr perfekter Look beginnt hier</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #f5f5f5;
+      --bg-card: #ffffff;
+      --accent: #c9a24d;
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --border-light: #e0e0e0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .nav-links a.cta {
+      background-color: var(--accent);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 4px;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 8px;
+    }
+
+    .burger span {
+      height: 3px;
+      width: 25px;
+      background: var(--text-main);
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .burger { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        display: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .nav-links a {
+        margin: 15px 0;
+        font-size: 1.1rem;
+      }
+
+      .nav-links.active { display: flex; }
+    }
+
+    /* HERO */
+    header {
+      background-color: #ffffff;
+      padding: 90px 20px 80px;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .slogan {
+      margin-top: 30px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* BOOKING */
+    .booking {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .cal-wrapper {
+      width: 100%;
+      height: 650px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 768px) {
+      .cal-wrapper { height: 520px; }
+    }
+
+    @media (max-width: 480px) {
+      .cal-wrapper { height: 480px; }
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .service-card {
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+    }
+
+    .service-card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+    }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+
+    .contact p {
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border-light);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* MOBILE STICKY BUTTON */
+    .mobile-booking-btn { display: none; }
+
+    @media (max-width: 768px) {
+      .mobile-booking-btn {
+        display: block;
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--accent);
+        color: #ffffff;
+        padding: 14px 26px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-decoration: none;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        z-index: 2000;
+      }
+    }
+
+    @media (max-width: 700px) {
+      header h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">ELTON BARBER</div>
+    <button class="burger" id="burger" type="button" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Dienstleistungen</a>
+      <a href="#contact">Kontakt</a>
+      <a href="#booking" class="cta">Termin buchen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home">
+  <div class="hero-container">
+    
+    <h1>Ihr perfekter Look beginnt hier</h1>
+    <p>Buchen Sie Ihren nächsten Termin bei unseren Top-Stylisten bequem online</p>
+    <div class="slogan">
+      Elton Barber. Echter Style, echte Leidenschaft<br>
+      Style auf der Straße. Qualität im Laden.
+    </div>
+  </div>
+</header>
+
+<!-- BOOKING -->
+<section id="booking">
+  <h2>Termin buchen</h2>
+
+  <div class="booking">
+    <div class="cal-wrapper">
+      <div id="my-cal-inline-eb"></div>
+    </div>
+
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            if (typeof namespace === "string") {
+              cal.ns[namespace] = cal.ns[namespace] || api;
+              p(cal.ns[namespace], ar);
+              p(cal, ["initNamespace", namespace]);
+            } else p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "init");
+
+      Cal("init", "eb", { origin: "https://app.cal.com" });
+
+      Cal.ns.eb("inline", {
+        elementOrSelector: "#my-cal-inline-eb",
+        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
+        calLink: "elton.barber/eb",
+      });
+
+      Cal.ns.eb("ui", { hideEventTypeDetails: false, layout: "month_view" });
+    </script>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Unsere Dienstleistungen</h2>
+  <div class="services">
+    <div class="service-card"><h3>Herrenhaarschnitt</h3><p>Waschen, Schneiden, Styling</p></div>
+    <div class="service-card"><h3>Bartpflege</h3><p>Konturen und Trimmen</p></div>
+    <div class="service-card"><h3>Damenhaarschnitt</h3><p>Waschen, Schneiden, Föhnen</p></div>
+    <div class="service-card"><h3>Haarfarbe / Tönung</h3><p>Komplettfarbe inkl. Pflege</p></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Kontakt</h2>
+  <p><strong>Elton Barber</strong></p>
+  <p>Keiserstrasse 6, 4310 Rheinfelden</p>
+  <p>E-Mail: <a href="mailto:eltoni.barber@gmail.com">eltoni.barber@gmail.com</a></p>
+  <p>Telefon: <a href="tel:+41798602117">+41 79 860 21 17</a></p>
+<div style="margin-top:25px; text-align:center;">
+  <img 
+    src="images/bild.png" 
+    alt="Elton Barber Salon – Innenansicht" 
+    style="max-width:300px; width:100%; height:auto; border-radius:8px;"
+  >
+</div>
+</section>
+
+<footer>
+  <span>Elton Barber</span> steht für authentischen Style, Präzision und Leidenschaft für echtes Handwerk.
+</footer>
+
+<a href="#booking" class="mobile-booking-btn">Termin buchen</a>
+
+<script>
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    burger.setAttribute("aria-expanded", navLinks.classList.contains("active"));
+    burger.setAttribute("aria-label", navLinks.classList.contains("active") ? "Menü schließen" : "Menü öffnen");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Menü öffnen");
+    });
+  });
+</script>
+
+</body>
+</html>
